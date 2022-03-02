@@ -8,7 +8,7 @@ public class Hangman {
 	static Scanner s = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		printHangman();
+		
 		
 		ArrayList<String> words = new ArrayList<String>();
 	
@@ -40,14 +40,11 @@ public class Hangman {
 			wordGuess=s.next();
 		}
 	    if(wordGuess.equals(word)) {
-			System.out.println("\nCorrect you win!");
+			System.out.println("Correct the word is "+word);
 			break;
 		}
 	   
-	
-		
-		
-		for(int i=0; i<word.length(); i++) {
+	   for(int i=0; i<word.length(); i++) {
 			if(letter==word.charAt(i)) {
 				letterGuess[i]=letter;
 			}
@@ -69,13 +66,17 @@ public class Hangman {
 			break;
 		}
 	}
-		
-		
-		
 		}
+	public static void printWord(char[] guess) {
+		for(int i=0; i<guess.length; i++) {
+			System.out.print(guess[i]+" ");
+		}
+	}
+	
 	
 	
 	public static void printHangman() {
+		
 
 	}
 		
@@ -86,24 +87,8 @@ public class Hangman {
 		
 		
 	
-	public static void printWord(char[] guess) {
-		for(int i=0; i<guess.length; i++) {
-			System.out.print(guess[i]+" ");
-		}
-	}
-	public static void checkWord(char[] guess,String word) {
-		int count=0;
-		for(int i=0; i<word.length(); i++) {
-			if(guess[i]==word.charAt(i)){
-				count++;
-			}
-			
-		}
-		if(count==word.length()){
-			System.out.println("Correct you win!");
-			
-		}
-	}
+	
+	
 	
 }
 	
